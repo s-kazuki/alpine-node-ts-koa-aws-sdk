@@ -10,7 +10,7 @@
     "coverage": "nyc --exclude dist/test --reporter=html npm run test:all",
     "lint": "tslint --fix -p tsconfig.json",
     "start": "pm2 start",
-    "start:dev": "npm start & tsc-watch -p tsconfig.json --onSuccess 'npm run lint'",
+    "start:dev": "pm2 start && pm2 logs & tsc-watch -p tsconfig.json --onSuccess 'npm run lint'",
     "test": "npm run build && mocha --exit --recursive dist/test",
     "test:check": "npm run build && mocha --exit dist/test/models/checks/free_dictionary/owner_free.test.js",
     "test:checks": "npm run build && mocha --exit dist/test/models/checks/**/*.js",
