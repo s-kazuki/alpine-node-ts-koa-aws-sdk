@@ -1,4 +1,4 @@
-FROM node:8.11-alpine
+FROM node:10.15-alpine
 
 LABEL maintainer="S-Kazuki<contact@revoneo.com>"
 
@@ -8,7 +8,7 @@ WORKDIR $APP_ROOT
 
 COPY package.json ${APP_ROOT}/
 
-RUN npm install \
+RUN npm ci \
 && npm cache clean --force \
 \
 && apk update \
