@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@koa/cors": "^2.2.3",
+    "@types/uuid": "^3.4.4",
     "aws-sdk": "^2.387.0",
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
