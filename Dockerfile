@@ -6,7 +6,7 @@ ENV APP_ROOT=/node
 
 WORKDIR $APP_ROOT
 
-COPY package.json ${APP_ROOT}/
+COPY package*.json ${APP_ROOT}/
 
 RUN npm ci \
 && npm cache clean --force \
