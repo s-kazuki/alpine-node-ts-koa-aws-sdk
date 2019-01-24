@@ -12,10 +12,12 @@
     "start": "pm2 start",
     "start:dev": "pm2 start && pm2 logs & tsc-watch -p tsconfig.json --onSuccess 'npm run lint'",
     "test": "npm run build && mocha --exit --recursive dist/test",
-    "test:check": "npm run build && mocha --exit dist/test/models/checks/free_dictionary/owner_free.test.js",
+    "test:check": "npm run build && mocha --exit dist/test/models/checks/some/some.test.js",
     "test:checks": "npm run build && mocha --exit dist/test/models/checks/**/*.js",
-    "test:model": "npm run build && mocha --exit dist/test/models/owner_free_keyword.test.js",
+    "test:model": "npm run build && mocha --exit dist/test/models/some.test.js",
     "test:models": "npm run build && mocha --exit dist/test/models/*.test.js",
+    "test:route": "npm run build && mocha --exit dist/test/routes/some.test.js",
+    "test:routes": "npm run build && mocha --exit dist/test/routes/*.test.js",
     "test:integration": "npm run build && mocha --exit --recursive dist/test/integration",
     "test:all": "npm run build && mocha --exit --recursive dist/test"
   },
@@ -23,7 +25,6 @@
   "license": "ISC",
   "dependencies": {
     "@koa/cors": "^2.2.3",
-    "@types/uuid": "^3.4.4",
     "aws-sdk": "^2.387.0",
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/chai": "^4.1.7",
+    "@types/chai-http": "^3.0.5",
     "@types/joi": "^14.0.1",
     "@types/jsonwebtoken": "^8.3.0",
     "@types/koa": "^2.0.48",
@@ -53,8 +55,10 @@
     "@types/node": "^10.12.18",
     "@types/redis": "^2.8.10",
     "@types/sinon": "^5.0.7",
+    "@types/uuid": "^3.4.4",
     "@types/xml2js": "^0.4.3",
     "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "mocha": "^5.2.0",
     "mocha-sinon": "^2.1.0",
     "nyc": "^13.1.0",
@@ -66,6 +70,7 @@
     "tslint-config-standard": "^8.0.1",
     "tslint-no-unused-expression-chai": "^0.1.4",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "uuid": "^3.3.2"
   }
 }
